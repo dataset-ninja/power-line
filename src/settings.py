@@ -5,15 +5,17 @@ from dataset_tools.templates import AnnotationType, CVTask, Industry, License
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = None
-PROJECT_NAME_FULL: Optional[str] = None
+PROJECT_NAME: str = "Power Line TEIAS"
+PROJECT_NAME_FULL: Optional[str] = "Power Line TEIAS"
 
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = None
-INDUSTRIES: List[Industry] = None
-CV_TASKS: List[CVTask] = None
+LICENSE: License = License.MIT(
+    url="https://data.mendeley.com/datasets/twxp8xccsw/1/files/84e4ad20-7c12-4b27-9bcb-6715b4ce84a0"
+)
+APPLICATIONS: List[Industry] = [Industry.Energy()]
+CV_TASKS: List[CVTask] = [CVTask.]
 ANNOTATION_TYPES: List[AnnotationType] = None
 
 RELEASE_YEAR: int = None
@@ -56,7 +58,7 @@ def get_settings():
     settings = {
         "project_name": PROJECT_NAME,
         "license": LICENSE,
-        "industries": INDUSTRIES,
+        "applications": APPLICATIONS,
         "cv_tasks": CV_TASKS,
         "annotation_types": ANNOTATION_TYPES,
         "release_year": RELEASE_YEAR,
